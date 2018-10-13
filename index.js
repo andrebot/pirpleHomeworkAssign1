@@ -6,10 +6,7 @@ const helloPayload = JSON.stringify({ msg: 'Hello World!' });
 const errorPayload = JSON.stringify({ msg: 'Page not found' });
 
 function parseUrl(url) {
-  const parsedUrl = URL.parse(url);
-  const path = parsedUrl.pathname;
-
-  return path.replace(/^\/+|\/+$/g, '');
+  return URL.parse(url).pathname.replace(/^\/+|\/+$/g, '');
 }
 
 function routeRequest(path, response) {
